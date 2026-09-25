@@ -1,0 +1,15 @@
+# Accept side of square and radius of circle
+side <- as.numeric(readline("Enter the side of the square: "))
+radius <- as.numeric(readline("Enter the radius of the circle: "))
+
+# Calculate areas
+square_area <- side * side
+circle_area <- pi * radius * radius
+
+# Calculate total area
+total_area <- square_area + circle_area
+
+# Display results
+cat("Area of square =", square_area, "\n")
+cat("Area of circle =", circle_area, "\n")
+cat("Total area =", total_area, "\n")
