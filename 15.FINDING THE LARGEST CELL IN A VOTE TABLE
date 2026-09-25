@@ -1,0 +1,25 @@
+# Create a table of votes
+votes <- matrix(c(120, 250, 180,
+                  300, 150, 220,
+                  200, 350, 275),
+                nrow = 3, byrow = TRUE)
+
+# Give row and column names
+rownames(votes) <- c("Ward 1", "Ward 2", "Ward 3")
+colnames(votes) <- c("Candidate A", "Candidate B", "Candidate C")
+
+# Find the largest vote value
+max_votes <- max(votes)
+
+# Find the ward-candidate combination(s) with the largest votes
+result <- which(votes == max_votes, arr.ind = TRUE)
+
+print("Vote Table:")
+print(votes)
+
+cat("Highest votes =", max_votes, "\n")
+
+for (i in 1:nrow(result)) {
+  cat("Ward:", rownames(votes)[result[i, 1]],
+      ", Candidate:", colnames(votes)[result[i, 2]], "\n")
+}
