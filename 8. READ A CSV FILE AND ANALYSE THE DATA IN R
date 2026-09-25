@@ -1,0 +1,19 @@
+student_data <- data.frame(
+  name = c("Maxi", "Maria", "Antony"),
+  marks = c(40, 60, 90)
+)
+
+write.csv(student_data, "maxiyy.csv", row.names = FALSE)
+cat("CSV file created successfully\n")
+
+data <- read.csv("maxiyy.csv")
+print(data)
+
+barplot(
+  data$marks,
+  names.arg = data$name,
+  col = "pink",
+  main = "Student Marks",
+  xlab = "Name",
+  ylab = "Marks"
+)
