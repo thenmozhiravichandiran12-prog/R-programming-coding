@@ -1,0 +1,25 @@
+# Create first data frame
+df1 <- data.frame(
+  Name = c("Anu", "Bala"),
+  Age = c(20, 21)
+)
+
+# Create second data frame
+df2 <- data.frame(
+  Name = c("Cathy", "Divya"),
+  Age = c(22, 20)
+)
+
+# rbind() - combines rows
+row_combined <- rbind(df1, df2)
+print("Using rbind():")
+print(row_combined)
+
+# cbind() - combines columns
+df3 <- data.frame(
+  City = c("Chennai", "Cuddalore")
+)
+
+column_combined <- cbind(df1, df3)
+print("Using cbind():")
+print(column_combined)
