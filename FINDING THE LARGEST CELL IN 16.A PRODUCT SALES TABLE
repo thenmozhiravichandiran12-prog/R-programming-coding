@@ -1,0 +1,25 @@
+# Create a table of product sales
+sales <- matrix(c(120, 250, 180,
+                  300, 150, 220,
+                  200, 350, 275),
+                nrow = 3, byrow = TRUE)
+
+# Give row and column names
+rownames(sales) <- c("January", "February", "March")
+colnames(sales) <- c("Product A", "Product B", "Product C")
+
+# Find the largest sales value
+max_sales <- max(sales)
+
+# Find the month-product combination
+result <- which(sales == max_sales, arr.ind = TRUE)
+
+print("Sales Table:")
+print(sales)
+
+cat("Highest sales =", max_sales, "\n")
+
+for (i in 1:nrow(result)) {
+  cat("Month:", rownames(sales)[result[i, 1]],
+      ", Product:", colnames(sales)[result[i, 2]], "\n")
+}
